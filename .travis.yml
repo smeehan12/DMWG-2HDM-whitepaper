@@ -1,14 +1,4 @@
-stages:
-  - build
-  
-build_pdf:
-  stage: document
-  image: aergus/latex:latest
-  
-  script:
-    - source compile.sh
-    
-  artifacts:
-    paths:
-      - 2HDMa-whitepaper.pdf
-    expire_in: 1 year
+sudo: required
+services: docker
+script:
+  - docker pull aergus/latex:latest
